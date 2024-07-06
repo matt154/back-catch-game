@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const port = 5000;
+const port = 10000;
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -17,7 +17,7 @@ app.post('/log', (req, res) => {
     res.status(201).send(log);
 });
 
-app.get('/logs', (req, res) => {
+app.get('/log', (req, res) => {
     console.log("new GET arrived");
     res.send(logs);
 });
