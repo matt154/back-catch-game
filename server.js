@@ -12,11 +12,13 @@ let logs = [];
 
 app.post('/log', (req, res) => {
     const log = { timestamp: req.body.timestamp };
+    console.log(`new post arrived ${log.timestamp}`);
     logs.push(log);
     res.status(201).send(log);
 });
 
 app.get('/logs', (req, res) => {
+    console.log("new GET arrived");
     res.send(logs);
 });
 
